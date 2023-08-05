@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/style.css') }}"
+  />
+  <title>Nearby Hospitals</title>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">ChatBot</a></li>
+      <li><a href="map.html">Nearby Hospitals</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Nearby Hospitals</h2>
+    <div id="map"></div>
+  </main>
+
+  <!-- Add the Google Maps JavaScript API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+  <script>
+    // Function to initialize the map
+    function initMap() {
+      // Define the map options
+      var mapOptions = {
+        center: { lat: 40.7128, lng: -74.0060 }, // New York City coordinates (you can change this to your location)
+        zoom: 12 // Set the initial zoom level
+      };
+
+      // Create the map
+      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+      // Define the nearby hospitals' locations and info
+      var nearbyHospitals = [
+        {
+          name: "Hospital 1",
+          address: "123 Main St, New York, NY",
+          lat: 40.7128,
+          lng: -74.0060
+        },
+        {
+          name: "Hospital 2",
+          address: "456 Maple Ave, New York, NY",
+          lat: 40.7184,
+          lng: -73.9948
+        },
+        // Add more hospitals here
+      ];
+
+      // Add markers for each nearby hospital
+      nearbyHospitals.forEach(function (hospital) {
+        var marker = new google.maps.Marker({
+          position: { lat: hospital.lat, lng: hospital.lng },
+          map: map,
+          title: hospital.name
+        });
+
+        // Add info window for each marker
+        var infoWindow = new google.maps.InfoWindow({
+          content: "<strong>" + hospital.name + "</strong><br>" + hospital.address
+        });
+
+        marker.addListener("click", function () {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="footer-text">&copy; 2022 Aushadhi Buddy. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <p class="footer-text">Developed by <a href="https://github.com/16kush" target="_blank" class="developer-link">Kush Shah</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>

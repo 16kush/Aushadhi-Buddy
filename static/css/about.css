@@ -1,0 +1,40 @@
+/* Reset some default styles for better aesthetics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Light grayish blue */
+  }
+  
+  .container {
+    background-color: #fff; /* White */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .container h1 {
+    background-color: #ff4500; /* Reddit's primary color */
+    padding: 15px;
+    color: #fff;
+    font-size: 24px;
+  }
+  
+  .container p {
+    color: #443939; /* Brownish Gray */
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container h1 {
+      font-size: 20px;
+    }
+  }
+  

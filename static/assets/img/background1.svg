@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle - light blue -->
+  <circle cx="100" cy="100" r="100" fill="#B4DFFB" />
+
+  <!-- Head - skin color -->
+  <circle cx="100" cy="80" r="50" fill="#FDD9B5" />
+
+  <!-- Eyes -->
+  <circle cx="80" cy="70" r="6" fill="black" />
+  <circle cx="120" cy="70" r="6" fill="black" />
+
+  <!-- Mouth - simple smile -->
+  <path d="M90 90 Q100 100, 110 90" fill="none" stroke="black" />
+
+  <!-- Stethoscope -->
+  <line x1="80" y1="120" x2="120" y2="120" stroke="black" stroke-width="4" />
+  <circle cx="75" cy="120" r="7" fill="white" stroke="black" stroke-width="2" />
+  <circle cx="125" cy="120" r="7" fill="white" stroke="black" stroke-width="2" />
+
+  <!-- Name tag -->
+  <rect x="70" y="130" width="60" height="20" fill="#F5F5F5" />
+  <text x="100" y="145" font-size="12" font-family="Arial" text-anchor="middle" fill="#000">
+    MEDBOT
+  </text>
+</svg>
