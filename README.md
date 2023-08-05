@@ -88,6 +88,9 @@ server in development mode on localhost, port 5000.
 
 ## Demo Video
 
+[![Demo Video](https://github.com/16kush/Aushadhi-Buddy/raw/main/static/Demo.mp4)](https://github.com/16kush/Aushadhi-Buddy/raw/main/static/Demo.mp4)
+
+
 <video width="640" height="360" controls>
   <source src="https://github.com/16kush/Aushadhi-Buddy/raw/main/static/Demo.mp4" type="video/mp4">
   Your browser does not support the video tag.
